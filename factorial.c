@@ -1,16 +1,17 @@
 #include "main.h"
 /**
-  *factorial - returns factorial of a given number.
-  *@n: number to find  factorial of.
+  *_puts_recursion - prints a string followed by a new line.
+  *@s: pointer to string.
   *
-  *Return: factorial of number
-  *-1 if n < 0.
+  *Return: void.
   */
-int factorial(int n)
+void _puts_recursion(char *s)
 {
-	if (n < 0)
-		return (-1);
-	if (n == 0 || n == 1)
-		return (1);
-	return (n * factorial(n - 1));
+	if (*s == '\0') /* base case */
+	{
+		_putchar('\n');
+		return;
+	}
+	_putchar(*s);
+	_puts_recursion(s + 1);
 }
